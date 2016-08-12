@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App';
+import configureStore from './store/configureStore';
+import Root from './components/Root';
 
-if (process.env.NODE_ENV !== 'production') {
-	React.Perf = require('react-addons-perf');
-}
+const store = configureStore();
 
 ReactDOM.render(
-	<App />,
-	document.getElementById('app')
+	<Root store={store} />,
+	document.getElementById('root')
 );

@@ -1,26 +1,35 @@
 import React from 'react';
 
 import Note from './Note';
-import Editable from './Editable';
+import Button from './Button';
+import EditableInline from './EditableInline';
 
-export default ({
-	notes,
-	onNoteClick=() => {},
-	onEdit=() => {},
-	onDelete = () => {}
-}) => (
-	<ul className="notes">{notes.map(({id, task, editing}) =>
-		<li key={id}>
-			<Note className="note" onClick={onNoteClick.bind(null, id)}>
-				<Editable
-					className="editable"
-					editing={editing}
-					value={task}
-					onEdit={onEdit.bind(null, id)} />
-				<button
-					className="delete"
-					onClick={onDelete.bind(null, id)}>x</button>
+export default ({ notes, onDelete, onNoteClick, onFinishEdit, onNoteMove }) => (
+	<ul className="notes">{notes.map( ({ id, task, editing }, i) =>
+		<li key={id} className="note">
+
+			<Button 
+				onClick={ () => onDelete(id) }
+				label="x" 
+				className="delete" />
+
+			<Note
+				id={id}
+				index={i}
+				className="note"
+				name="task"
+				task={task}
+				onClick={ () => onNoteClick(id) }
+				onMove={ (sourceIndex, targetIndex) => onNoteMove(sourceIndex, targetIndex) }>
+
+				<EditableInline 
+					editing={editing} 
+					value={task} 
+					onEdit={ (task) => onFinishEdit(id, task) } />
+
 			</Note>
+
 		</li>
 	)}</ul>
 )
+
