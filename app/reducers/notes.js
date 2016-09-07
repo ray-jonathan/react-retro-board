@@ -1,4 +1,4 @@
-import * as types from '../actions/notes';
+import * as types from '../constants/actionTypes';
 /* notes reducer: respsonible for state.notes
    so state argument here is actually the state.notes array 
 */
