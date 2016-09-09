@@ -35,7 +35,7 @@ const EditInline = ({ value, onEdit, name } ) => {
 			defaultValue={value}
 			onBlur={ (e) => finishEdit(e) }
 			onKeyPress={ (e) => checkEnter(e) }
-			className="editable" />
+			className="editable form-control" />
 	);
 
 };
