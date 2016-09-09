@@ -9,7 +9,7 @@ const ENABLE_POLLING = process.env.ENABLE_POLLING;
 const PATHS = {
   app: path.join(__dirname, 'app'),
   style: [
-    path.join(__dirname, 'app', 'main.css')
+    path.join(__dirname, 'app/styles', 'main.css')
   ],
   build: path.join(__dirname, 'build'),
   test: path.join(__dirname, 'tests')
@@ -98,7 +98,9 @@ switch(TARGET) {
           style: PATHS.style
         }
       },
-      parts.setupCSS(PATHS.style),
+      parts.setupCSS(),
+      parts.setupImages(),
+      parts.setupFonts(),
       parts.devServer({
         // Customize host/port here if needed
         host: process.env.HOST,
