@@ -1,17 +1,16 @@
 import React from 'react';
+import NavDropdown from 'react-bootstrap/lib/NavDropdown';
+import MenuItem from 'react-bootstrap/lib/MenuItem';
 
 export default ({ boards, selectedBoard, onChange}) => {
 
-	const onChangeHandler = (e) => {
-		onChange(e.target.value);
-	}
 	if (boards.length) {
 		return (
-			<select value={selectedBoard} onChange={ (e) => onChangeHandler(e) }>
+			<NavDropdown title={<span><i className="glyphicon glyphicon-th-list"></i> Boards</span>} onSelect={ (eventKey) => onChange(eventKey) } id="boardSelector">
 				{boards.map(({id, title}) =>
-					<option value={id} key={id}>{title}</option>
+					<MenuItem eventKey={id} key={id}>{title}</MenuItem>
 				)}
-			</select>
+			</NavDropdown>
 		)
 	}
 	return null;
