@@ -5,13 +5,13 @@ import Button from './Button';
 import EditableInline from './EditableInline';
 
 export default ({ notes, onDelete, onNoteClick, onFinishEdit, onNoteMove }) => (
-	<ul className="notes">{notes.map( ({ id, task, editing }, i) =>
+	<ul className="notes list-unstyled">{notes.map( ({ id, task, editing }, i) =>
 		<li key={id} className="note">
 
 			<Button 
 				onClick={ () => onDelete(id) }
 				label="x" 
-				className="delete" />
+				className="delete btn btn-default pull-right" />
 
 			<Note
 				id={id}

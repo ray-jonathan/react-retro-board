@@ -7,7 +7,7 @@ import { DragDropContext } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 
 const Lane = ({lane}) => (
-	<div className="lane">
+	<div className="col-md-4 lane">
 		<div className="lane-header">
 			<h2>{lane.name}</h2>
 		</div>
