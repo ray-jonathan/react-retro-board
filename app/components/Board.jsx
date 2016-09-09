@@ -5,8 +5,8 @@ export default ({id, title, lanes, hasActiveBoard}) => {
 	
 	if (hasActiveBoard) {
 		return (
-			<div className="board">
-				<h2>{title}</h2>
+			<div className="board container-fluid">
+				<h3>{title}</h3>
 				<Lanes lanes={lanes} />
 			</div>
 		)
