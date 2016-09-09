@@ -5,7 +5,8 @@ import { addLaneToBoard } from '../actions/boards';
 import uuid from 'uuid';
 
 const mapStatehToButtonProps = (state, ownProps) => ({
-	label: ownProps.label || 'Click me...'
+	label: ownProps.label || 'Click me...',
+	className: 'btn btn-default'
 });
 
 const mapDispatchToButtonProps = (dispatch, ownProps) => ({
