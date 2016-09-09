@@ -4,6 +4,11 @@ import { addBoard, addLaneToBoard, setActiveBoard } from '../actions/boards';
 import { addLane } from '../actions/lanes';
 import uuid from 'uuid';
 
+const mapStateToButtonProps = (state, ownProps) => ({
+	label: ownProps.label || 'button',
+	className: ownProps.className || 'btn btn-primary'
+});
+
 const mapDispatchToButtonProps = (dispatch, ownProps) => ({
 	onClick: () => {
 		const boardId = uuid.v4();
@@ -22,7 +27,7 @@ const mapDispatchToButtonProps = (dispatch, ownProps) => ({
 });
 
 const AddBoardButtonContainer = connect(
-	null,
+	mapStateToButtonProps,
 	mapDispatchToButtonProps
 )(Button);
 
