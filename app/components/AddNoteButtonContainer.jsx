@@ -6,7 +6,8 @@ import { addNote, activateNoteEditing } from '../actions/notes';
 import { assignNoteToLane } from '../actions/lanes';
 
 const mapStatehToButtonProps = (state, ownProps) => ({
-	label: ownProps.label || 'button'
+	label: ownProps.label || 'button',
+	className: 'btn btn-default'
 });
 
 const mapDispatchToButtonProps = (dispatch, ownProps) => ({
