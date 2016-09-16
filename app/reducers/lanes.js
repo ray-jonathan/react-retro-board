@@ -1,6 +1,6 @@
 import update from 'react-addons-update';
 import uuid from 'uuid';
-import * as types from '../actions/lanes';
+import * as types from '../constants/actionTypes';
 
 const initialState = [
 	{
