@@ -40,7 +40,7 @@ describe('Lanes reducer', () => {
 
 		it('should append a lane to the state', ()=> {
 			const laneId = uuid.v4();
-			const laneName = `Lane {laneId}`;
+			const laneName = `Lane ${laneId}`;
 
 			const expectedState = [
 				{
