@@ -39,7 +39,7 @@ describe('Lanes actions', () => {
 
 	describe(`${types.UNASSIGN_NOTE_FROM_LANE}`, () => {
 
-		it('creates an action to assign a note to a lane', ()=> {
+		it('creates an action to unassign a note from a lane', ()=> {
 			const noteId = uuid.v4();
 			const laneId = uuid.v4();
 			const expected = {
@@ -55,7 +55,7 @@ describe('Lanes actions', () => {
 
 	describe(`${types.MOVE_NOTE_IN_LANE}`, () => {
 
-		it('creates an action to assign a note to a lane', ()=> {
+		it('creates an action to move a note in a lane', ()=> {
 			const laneId = uuid.v4();
 			const sourceIndex = 0;
 			const targetIndex = 2;
