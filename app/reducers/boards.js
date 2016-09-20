@@ -14,14 +14,6 @@ const boards = (state = [], action) => {
 				lanes: []
 			});
 		}
-		case types.SET_ACTIVE_BOARD: {
-			const boardId = action.id;
-
-			return state.map((board) => {
-				board.active = board.id === boardId;
-				return board;
-			});
-		}
 		case types.ASSIGN_LANE_TO_BOARD: {
 			const boardId = action.boardId;
 			const laneId = action.laneId;
