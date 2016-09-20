@@ -2,6 +2,11 @@ h1 {
     color: green;
 }
 
+.intro {
+    margin: 0 15px 0 15px;
+    padding:  0 15px 0 15px;
+}
+
 .note {
     min-height: 50px;
     padding: 0;
