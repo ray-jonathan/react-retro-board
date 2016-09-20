@@ -36,18 +36,4 @@ describe('Lanes actions', () => {
 
 	});
 
-	describe(`${types.SET_ACTIVE_BOARD}`, () => {
-
-		it('creates an action to set a board as active', ()=> {
-			const id = uuid.v4();
-			const expected = {
-				type: types.SET_ACTIVE_BOARD,
-				id
-			};
-
-			expect(setActiveBoard(id)).toEqual(expected);
-		});
-
-	});
-
 });

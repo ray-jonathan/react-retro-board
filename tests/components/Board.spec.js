@@ -9,8 +9,7 @@ function setup(propOptions = {}) {
 	const props = Object.assign({
 		id: 1,
 		title: 'Test board',
-		lanes: [],
-		hasActiveBoard: true
+		lanes: []
 	}, propOptions);
 
 	const wrapper = shallow(<Board {...props} />);
@@ -34,7 +33,7 @@ describe('<Board />', () => {
 
 	describe('when doesn\'t have active board', () => {
 		it('should return null', () => {
-			const { wrapper } = setup({hasActiveBoard: false});
+			const { wrapper } = setup({id: null});
 
 			expect(wrapper.html()).toBe(null);
 		});

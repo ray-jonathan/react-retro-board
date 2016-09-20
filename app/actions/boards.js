@@ -15,10 +15,3 @@ export const addLaneToBoard = (laneId, boardId) => {
 			boardId
 		}
 };
-
-export const setActiveBoard = (id) => {
-	return {
-		type: types.SET_ACTIVE_BOARD,
-		id
-	};
-};
