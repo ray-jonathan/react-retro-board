@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Button from './Button';
-import { addBoard, addLaneToBoard, setActiveBoard } from '../actions/boards';
+import { addBoard, addLaneToBoard } from '../actions/boards';
 import { addLane } from '../actions/lanes';
 import { browserHistory } from 'react-router';
 import uuid from 'uuid';
@@ -23,7 +23,6 @@ const mapDispatchToButtonProps = (dispatch, ownProps) => ({
 			dispatch(addLaneToBoard(laneId, boardId));
 		});
 
-		dispatch(setActiveBoard(boardId));
 		//TODO: Is pushing to the browser history the correct thing to do here?
 		browserHistory.push('/board/' + boardId);
 	}
