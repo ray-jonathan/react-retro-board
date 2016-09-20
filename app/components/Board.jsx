@@ -1,9 +1,9 @@
 import React from 'react';
 import Lanes from './Lanes';
 
-export default ({id, title, lanes, hasActiveBoard}) => {
+export default ({id, title, lanes}) => {
 	
-	if (hasActiveBoard) {
+	if (id) {
 		return (
 			<div className="board container-fluid">
 				<h3>{title}</h3>
