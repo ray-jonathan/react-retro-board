@@ -29,15 +29,4 @@ export default () => (
 			<BoardContainer />
 		</div>
 	</div>
-
-	// <div className="app-wrapper">
-	// 	<div className="app-header">
-	// 		<h1>Retro</h1>
-	// 		<BoardSelectorContainer />
-	// 		<AddBoardButtonContainer label="Start new Retro..." />
-	// 	</div>
-	// 	<div className="app-body">
-	// 		<BoardContainer />
-	// 	</div>
-	// </div>
 )
