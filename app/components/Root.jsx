@@ -4,7 +4,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import App from './App';
 
 export default ({store}) => (
-	// react-redux Provider...
+	//react-redux Provider...
 	//makes the Redux store available to connect() calls in the entire component hierarchy
 	<Provider store={store}>
 		<Router history={browserHistory}>
