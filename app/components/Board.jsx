@@ -1,5 +1,6 @@
 import React from 'react';
 import Lanes from './Lanes';
+import Intro from './Intro.jsx';
 
 export default ({id, title, lanes}) => {
 	
@@ -10,7 +11,10 @@ export default ({id, title, lanes}) => {
 				<Lanes lanes={lanes} />
 			</div>
 		)
+	} else {
+		return (
+			<Intro />
+		)
 	}
-	return null;
 
 }
