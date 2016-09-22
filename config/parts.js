@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const NpmInstallPlugin = require('npm-install-webpack-plugin');
 
+// Use HtmlWebpackPlugin to generate our index.html based on template
 exports.indexTemplate = function(options) {
   return {
     plugins: [
@@ -17,6 +18,8 @@ exports.indexTemplate = function(options) {
   };
 }
 
+// Babel loader, setup to transpile js and jsx files
+// See .babelrc for Babel config
 exports.loadJSX = function(include) {
   return {
     module: {
@@ -32,6 +35,23 @@ exports.loadJSX = function(include) {
   };
 }
 
+exports.loadJSON = function(incude) {
+  return {
+    module: {
+      loaders: [
+        {
+          test: /\.json$/,
+          // Enable caching for extra performance
+          loaders: ['json'],
+        }
+      ]
+    }
+  };
+}
+
+// TODO: Not yet in use
+// Code coverage tool 
+// See https://github.com/deepsweet/isparta-loader
 exports.loadIsparta = function(include) {
   return {
     module: {
@@ -46,6 +66,7 @@ exports.loadIsparta = function(include) {
   };
 }
 
+// Eslint loader
 exports.lintJSX = function(include) {
   return {
     module: {
@@ -60,6 +81,7 @@ exports.lintJSX = function(include) {
   };
 }
 
+// React performance availabe in the browser console by accessing `React.Perf`
 exports.enableReactPerformanceTools = function() {
   return {
     module: {
@@ -73,31 +95,21 @@ exports.enableReactPerformanceTools = function() {
   };
 }
 
+// Webpack's devserver setup
 exports.devServer = function(options) {
   const ret = {
     devServer: {
-      // Enable history API fallback so HTML5 History API based
-      // routing works. This is a good default that will come
-      // in handy in more complicated setups.
       historyApiFallback: true,
 
-      // Unlike the cli flag, this doesn't set
-      // HotModuleReplacementPlugin!
+      // Unlike the cli flag, this doesn't set HotModuleReplacementPlugin!
       hot: true,
       inline: true,
 
-      // Display only errors to reduce the amount of output.
+      // Display only errors to reduce the amount of output
       stats: 'errors-only',
 
-      // Parse host and port from env to allow customization.
-      //
-      // If you use Vagrant or Cloud9, set
-      // host: options.host || '0.0.0.0';
-      //
-      // 0.0.0.0 is available to all network devices
-      // unlike default `localhost`.
-      host: options.host, // Defaults to `localhost`
-      port: options.port // Defaults to 8080
+      host: options.host,
+      port: options.port
     },
     plugins: [
       // Enable multi-pass compilation for enhanced performance
@@ -127,8 +139,6 @@ exports.setupCSS = function(paths) {
         {
           test: /\.css$/,
           loaders: ['style', 'css']
-          //,
-          //include: paths
         }
       ]
     }
