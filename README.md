@@ -31,7 +31,7 @@ The app will run on http://localhost:9000/
     - Mocha
     - Expect
     - PhantomJS
-    - [Enzyme](https://github.com/airbnb/enzyme) for shallow rendering 
+    - [Enzyme](https://github.com/airbnb/enzyme)
 
 ## TODOs
 
