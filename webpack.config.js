@@ -80,6 +80,7 @@ switch(TARGET) {
 		);
 		break;
 	case 'test':
+	case 'test:watch':
 		config = merge(
 			common,
 			{
