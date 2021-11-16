@@ -15,7 +15,7 @@ const mapDispatchToButtonProps = (dispatch, ownProps) => ({
 		// in a real app the id would be generated server side
 		const noteId = uuid.v4();
 
-		dispatch(addNote(noteId));
+		dispatch(addNote(noteId, ownProps.laneId));
 
 		dispatch(assignNoteToLane(noteId, ownProps.laneId));
 

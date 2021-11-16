@@ -1,11 +1,25 @@
 import * as types from '../constants/actionTypes';
+import socket from '../socketInstance';
 
-export const addNote = (id) => {
-	return {
+export const addNote = (id, laneId) => {
+	const action = {
 			type: types.ADD_NOTE,
-			id
+			id,
+			laneId,
+			socketId : socket.id
 		};
+	socket.emit(action.type, action)
+	return action;
 };
+
+export const addNoteHelper = (id, laneId) => {
+	const action = {
+		type: types.ADD_NOTE,
+		id,
+		laneId
+	};
+	return action;
+}
 
 export const activateNoteEditing = (id) => {
 	return {

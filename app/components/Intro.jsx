@@ -11,6 +11,7 @@ export default () => (
 		<h2>Let's get started...</h2>
 		<p>Simply create your Retro board by clicking "Start Retro".</p>
 		<p>Existing boards can be accessed from the "Boards" selector above.</p>
-		<AddBoardButtonContainer label={<span><i className="glyphicon glyphicon-plus"></i> Start Retro</span>} className="btn btn-primary navbar-btn"  />
+		<AddBoardButtonContainer lanes={['Farts', 'Hearts', 'Darts']}  label={<span><i className="glyphicon glyphicon-plus"></i> Hearts/Farts/Darts</span>} className="btn btn-primary navbar-btn"  />
+		<AddBoardButtonContainer lanes={['Live', 'Laugh', 'Love']}  label={<span><i className="glyphicon glyphicon-plus"></i> Live/Laugh/Love</span>} className="btn btn-primary navbar-btn"  />
 	</Jumbotron>
 );

@@ -2,23 +2,7 @@ import update from 'react-addons-update';
 import uuid from 'uuid';
 import * as types from '../constants/actionTypes';
 
-const initialState = [
-	{
-		id:  uuid.v4(),
-		name: 'Start',
-		notes: []
-	},
-	{
-		id:  uuid.v4(),
-		name: 'Stop',
-		notes: []
-	},
-	{
-		id:  uuid.v4(),
-		name: 'Continue',
-		notes: []
-	}
-];
+const initialState = [];
 
 const lanes = (state = initialState, action) => {
 
