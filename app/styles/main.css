@@ -20,6 +20,7 @@ a, a:hover, a:visited {
 .app-body {
     display: flex;
     justify-content: center;
+    height: 100vh;
 }
 
 .container {
@@ -40,6 +41,8 @@ a, a:hover, a:visited {
     padding: 0;
     background-color: #ffffff;
     margin-bottom: 12px;
+    border-radius: 8px;
+    border: 2px solid red;
 }
 
 .editable {
@@ -49,12 +52,14 @@ a, a:hover, a:visited {
 ul.notes {
     margin-bottom: 0;
     padding-left: 10px;
+    height: 70% !important;
 }
 
 .note-wrapper {
     min-height: 50px;
     padding: 5px 10px 5px 10px;
     background-color: #ffffff;
+    border-radius: 8px;
 }
 
 textarea.editable {
@@ -63,6 +68,7 @@ textarea.editable {
 
 .lanes {
     display: flex;
+    height: 100%;
 }
 
 .lane-header, .notes, .lane-footer {
@@ -86,6 +92,7 @@ textarea.editable {
 
 button.delete {
     margin: 8px 8px 0 0;
+    font-size: 20px !important;
 }
 
 .lane {
@@ -95,9 +102,10 @@ button.delete {
 }
 
 .btn-default {
-    background-color: #c3dbe4 !important;
+    background-color: transparent !important;
     border: none !important;
     font-size: 24px !important;
+    color:#244471;
 }
 
 .btn-default:hover {
