@@ -58,6 +58,7 @@ ul.notes {
     margin-bottom: 0;
     padding-left: 10px;
     height: 70% !important;
+    overflow: scroll;
 }
 
 .note-wrapper {
@@ -106,7 +107,7 @@ button.delete {
 .lane {
     padding-right: 4px !important;
     padding-left: 4px !important;
-    width: 300px !important;
+  
 }
 
 .btn-default {
