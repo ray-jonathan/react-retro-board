@@ -43,6 +43,9 @@ a, a:hover, a:visited {
     margin-bottom: 12px;
     border-radius: 8px;
     border: 2px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .editable {
@@ -60,6 +63,9 @@ ul.notes {
     padding: 5px 10px 5px 10px;
     background-color: #ffffff;
     border-radius: 8px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
 }
 
 textarea.editable {
@@ -154,4 +160,13 @@ h2 {
     font-weight: bold !important;
     font-size: 16px !important;
     line-height: 19px !important;
+}
+
+.card-input {
+    min-height: 50px;
+        border: 1px solid #C1C6CD;;
+        margin: 8px;
+        border-radius: 8px;
+        padding: 4px;
+        width: 180px;
 }
