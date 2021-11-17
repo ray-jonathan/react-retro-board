@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Button from './Button';
 import { addLane } from '../actions/lanes';
 import { addLaneToBoard } from '../actions/boards';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 const mapStatehToButtonProps = (state, ownProps) => ({
 	label: ownProps.label || 'Click me...',
@@ -11,7 +11,7 @@ const mapStatehToButtonProps = (state, ownProps) => ({
 
 const mapDispatchToButtonProps = (dispatch, ownProps) => ({
 	onClick: () => {
-		const laneId = uuid.v4();
+		const laneId = uuidv4();
 
 		dispatch(addLane(laneId));
 

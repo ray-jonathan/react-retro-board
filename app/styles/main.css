@@ -1,6 +1,38 @@
+.navbar-default {
+    background-color: inherit !important;
+    border: none !important;
+}
+
+.navbar-header {
+    width: 145px;
+    height: 32px;
+    left: 0px;
+    top: 11px;
+    font-size: 20px;
+    padding: 8px;
+}
+
+a, a:hover, a:visited {
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.app-body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    margin-left: 0px !important;
+}
+
 .intro {
     margin: 0 15px 0 15px;
     padding:  0 15px 0 15px;
+}
+
+.jumbotron {
+    background-color: white !important;
 }
 
 .note {
@@ -29,21 +61,89 @@ textarea.editable {
     width: 90%;
 }
 
+.lanes {
+    display: flex;
+}
+
 .lane-header, .notes, .lane-footer {
-    background-color: #E9E9EB;
+    background-color: #c3dbe4;
     padding: 10px;
 }
 
 .lane-header {
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 2px solid white;
 }
 
 .lane-footer  {
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
+    display: flex;
+    justify-content: center;
+    border-top: 2px solid white;
 }
 
 button.delete {
     margin: 8px 8px 0 0;
+}
+
+.lane {
+    padding-right: 4px !important;
+    padding-left: 4px !important;
+    width: 300px !important;
+}
+
+.btn-default {
+    background-color: #c3dbe4 !important;
+    border: none !important;
+    font-size: 24px !important;
+}
+
+.btn-default:hover {
+    border: none !important;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label {
+    margin: 50px;
+    color: white !important;
+    height: 108px;
+    border-radius: 4px;
+}
+
+svg {
+    border-radius: 4px;
+}
+
+.selected-card {
+    box-shadow: 0px 0px 7px rgb(121 181 34);
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:visited, button {
+    padding: 7px 15px !important;
+    background: #498500 !important;
+    border-radius: 99px !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.bottom-buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 200px;
+}
+
+.bigSvg {
+    background-color: white !important
+}
+
+h2 {
+    font-style: normal;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    line-height: 19px !important;
 }

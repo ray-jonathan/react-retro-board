@@ -18,7 +18,7 @@ const Lane = ({lane, state}) => {
 		</div>
 		<NotesContainer notes={notes} lane={lane.id} />
 		<div className="lane-footer">
-			<AddNoteButtonContainer laneId={lane.id} label={`Add a card to ${lane.id.substring(0,5)}`} />
+			<AddNoteButtonContainer laneId={lane.id} label="+" />
 		</div>
 	</div>
 )}

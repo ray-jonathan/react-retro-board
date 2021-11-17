@@ -1,6 +1,6 @@
 import React from 'react';
 import Lanes from './Lanes';
-import Intro from './Intro.jsx';
+import PreIntro from './Pre-Intro.jsx';
 
 export default (props) => {
 	// console.log(props)
@@ -13,7 +13,7 @@ export default (props) => {
 		)
 	} else {
 		return (
-			<Intro />
+			<PreIntro />
 		)
 	}
 
