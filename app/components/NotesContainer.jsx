@@ -68,7 +68,7 @@ export default class NotesContainer extends React.Component {
 	}
 
 	render(){
-		const {lane, notes} = this.props
+		const {lane, laneName, notes} = this.props
 		if(notes.length)console.log('new NotesContainer render', notes)
 		// let notes = ownProps.notes.map( id => state.notes.find( (note) => note.id === id ) );
 		return (
@@ -78,6 +78,7 @@ export default class NotesContainer extends React.Component {
 				onFinishEdit={(id, task) => this.onFinishEdit(id, task)}
 				onNoteMove={(sourceIndex, targetIndex) => this.onNoteMove(lane.id, sourceIndex, targetIndex)}
 				notes={notes}
+				lane={laneName}
 			/>
 		)
 	}

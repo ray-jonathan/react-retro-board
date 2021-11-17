@@ -16,7 +16,7 @@ const Lane = ({lane, state}) => {
 		<div className="lane-header">
 			<h2>{lane.name}</h2>
 		</div>
-		<NotesContainer notes={notes} lane={lane.id} />
+		<NotesContainer notes={lane.notes} laneId={lane.id} laneName={lane.name}/>
 		<div className="lane-footer">
 			<AddNoteButtonContainer laneId={lane.id} label="+" />
 		</div>

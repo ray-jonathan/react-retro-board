@@ -42,7 +42,7 @@ a, a:hover, a:visited {
     background-color: #ffffff;
     margin-bottom: 12px;
     border-radius: 8px;
-    border: 2px solid red;
+    border: 2px solid;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -183,4 +183,39 @@ h2 {
         border-radius: 8px;
         padding: 4px;
         width: 180px;
+}
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.pretend-menu {
+   display: flex;
+   padding: 8px;
+}
+
+/*Colors of card outlines */
+
+.noteStart, .noteSad, .noteLonged, .noteAppreciations {
+    border-color: #039BE5;
+}
+
+.noteStop, .noteMad, .noteLacked {
+    border-color: #FB8C00;
+}
+
+.noteContinue, .noteGlad, .noteLiked {
+    border-color: #3D8B40;
+}
+
+.noteWishes {
+    border-color: #D81B60;
+}
+
+.noteLearned, .notePuzzles {
+    border-color: #771E86;
+}
+
+.noteRisks {
+    border-color: #FFB300;
 }
