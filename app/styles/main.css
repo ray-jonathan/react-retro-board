@@ -46,6 +46,8 @@ a, a:hover, a:visited {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items:flex-start;
+
 }
 
 .editable {
@@ -114,6 +116,13 @@ button.delete {
     color:#244471;
 }
 
+.inputWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 6px;
+}
+
 .btn-default:hover {
     border: none !important;
 }
@@ -136,6 +145,10 @@ svg {
 .selected-card {
     box-shadow: 0px 0px 7px rgb(121 181 34);
 }
+.btn:active{
+    -webkit-box-shadow:none !important;
+    box-shadow: none !important;
+}
 
 .btn-primary, .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:visited, button {
     padding: 7px 15px !important;
@@ -143,6 +156,7 @@ svg {
     border-radius: 99px !important;
     border: none !important;
     outline: none !important;
+    
 }
 
 .bottom-buttons {

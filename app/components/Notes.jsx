@@ -9,24 +9,27 @@ export default ({ notes, onDelete, onNoteClick, onFinishEdit, onNoteMove }) => {
 		if(editing) {
 			return (
 				<li key={id} className="note">
-					<Note
-						id={id}
-						index={i}
-						className="note"
-						name="task"
-						task={task}
-						onClick={ () => onNoteClick(id) }
-						onMove={ (sourceIndex, targetIndex) => onNoteMove(sourceIndex, targetIndex) }>
-		
-						<span 
-							className="card-input" 
-							role="textbox" 
+					<div className="inputWrapper">
+						<Note			
 							id={id}
-							contentEditable>
-							{task}
-						</span>
-					</Note>
-					<button value={id} id={id} className='btn-primary' onClick={() => onFinishEdit(id, document.getElementById(id).innerText)}>Save</button>
+							index={i}
+							className="note"
+							name="task"
+							task={task}
+							onClick={ () => onNoteClick(id) }
+							onMove={ (sourceIndex, targetIndex) => onNoteMove(sourceIndex, targetIndex) }>
+			
+							<span 
+								className="card-input" 
+								role="textbox" 
+								id={id}
+								contentEditable>
+								{task}
+							</span>
+						</Note>
+						<button value={id} id={id} className='btn-primary' onClick={() => onFinishEdit(id, document.getElementById(id).innerText)}>Save</button>
+					</div>
+					
 					<Button 
 						onClick={ () => onDelete(id) }
 						label="x" 

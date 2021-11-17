@@ -7,8 +7,7 @@ export default (props) => {
 	if (props.boardId) {
 		return (
 			<div className="board container-fluid">
-				<h3>{props.title}</h3>
-				<Lanes {...props} />
+				<Lanes {...props}/>
 			</div>
 		)
 	} else {
