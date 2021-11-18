@@ -63,6 +63,7 @@ ul.notes {
     margin-bottom: 0;
     padding-left: 10px;
     height: 70% !important;
+    overflow-y: auto;
 }
 
 .note-wrapper {
@@ -167,6 +168,17 @@ svg {
     font-weight: normal;
 }
 
+.btn-secondary, .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active, .btn-secondary:visited {
+    padding: 7px 15px !important;
+    background: white !important;
+    border-radius: 99px !important;
+    border: solid 1px #9FC5D5!important;
+    outline: none !important;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
+}
+
 .bottom-buttons {
     display: flex;
     justify-content: flex-end;
@@ -249,4 +261,38 @@ h2 {
     font-weight: bold;
     font-size: 14px;
     line-height: 17px;
+}
+
+.daddy {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.mommy {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-around;
+    align-content: center;
+    height: 100%;
+    align-items: center;
+    min-width: 350px;
+}
+
+.arrow {
+    padding: 24px;
+    height: 80px;
+}
+
+.upsidedown {
+    transform: rotate(180deg);
+}
+
+h1 {
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-size: 24px !important;
+    line-height: 29px !important;
 }
