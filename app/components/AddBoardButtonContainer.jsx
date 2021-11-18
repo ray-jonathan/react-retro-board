@@ -41,7 +41,6 @@ const onClick = (props) => {
 	socket.emit('BOARD_UPDATE', state)
 	// setTimeout(()=> {
 	// }, 1001)
-	
 }
 
 const AddBoardButtonContainer = (props) => (

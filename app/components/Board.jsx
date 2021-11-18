@@ -85,9 +85,9 @@ export default class Board extends React.Component {
 		</svg>);
 
 		render() {
-			const {id, title, lanes} = this.props;
+			const {boardId, title, lanes} = this.props;
 
-			if(!id) {
+			if(!boardId) {
 				return(
 					<PreIntro />
 				);
@@ -99,7 +99,7 @@ export default class Board extends React.Component {
 						<div className='board-page'>
 							{this.ThinkHeader}
 							<div className="board container-fluid">
-								<Lanes {...props}/>
+								<Lanes {...this.props}/>
 							</div>
 							<button className='bigSvg' onClick={this.onIntroNextClick}>
 								{this.Footer}
@@ -111,7 +111,7 @@ export default class Board extends React.Component {
 					<div className='board-page'>
 						{this.VoteHeader}
 						<div className="board container-fluid">
-							<Lanes {...props} voting={true}/>
+							<Lanes {...this.props} voting={true}/>
 						</div>
 						<button className='bigSvg' onClick={() => this.onVotingNextClick}>
 							{this.Footer}
