@@ -2,13 +2,13 @@ import React from 'react';
 import Lanes from './Lanes';
 import Intro from './Intro.jsx';
 
-export default ({id, title, lanes}) => {
-	
-	if (id) {
+export default (props) => {
+	// console.log(props)
+	if (props.boardId) {
 		return (
 			<div className="board container-fluid">
-				<h3>{title}</h3>
-				<Lanes lanes={lanes} />
+				<h3>{props.title}</h3>
+				<Lanes {...props} />
 			</div>
 		)
 	} else {

@@ -3,14 +3,17 @@ import classnames from 'classnames';
 
 export default ({editing, value, onEdit, name}) => {
 	if (editing) {
+		console.log('showing editing mode for 1 note')
 		return (
 			<EditInline value={value} onEdit={onEdit} name={name} />
 		);
 	}
-
-	return (
-		<span>{value}</span>
-	);
+	else{
+		console.log('')		
+		return (
+			<span>{value}</span>
+		);
+	}
 };
 
 const EditInline = ({ value, onEdit, name } ) => {

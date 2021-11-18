@@ -1,30 +1,40 @@
 import React from 'react';
-import BoardContainer from './BoardContainer';
+import Board from './Board';
 import ClearBoardButtonContainer from './ClearBoardButtonContainer';
 import BoardSelectorContainer from './BoardSelectorContainer';
 
 import Navbar from 'react-bootstrap/lib/Navbar';
 import Nav from 'react-bootstrap/lib/Nav';
 import NavItem from 'react-bootstrap/lib/NavItem';
-import { browserHistory } from 'react-router';
+import stringifyIsTheSame from '../stringifyIsTheSame'
+
 export default  class App extends React.Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			data : localStorage.getItem('state') ? JSON.parse(localStorage.getItem('state')) : null
+			boards: [],
+			lanes: [],
+			notes: []
 		}
 	}
 	componentDidMount() {
-		if(this.state.data){
-			console.log('STATE.DATA', this.state.data)
-			browserHistory.push('/board/' + this.state.data.boards[0].id);
-		}
 		this.interval = setInterval(() => {
 			const state = JSON.parse(localStorage.getItem('state'))
-			if(state){
-				this.setState({data: state})
+			if(!state){
+				localStorage.setItem('state', JSON.stringify(this.state))
+			}  
+				// console.log('check for new data')
+			if(!stringifyIsTheSame(state, this.state) && state){
+				console.log(JSON.stringify(state))
+				console.log('vs')
+				console.log(JSON.stringify(this.state))
+				this.setState({
+					boards: state.boards,
+					lanes: state.lanes,
+					notes: state.notes
+				}, () => console.log('i setted state', this.state))
 			}
-		}, 1000);
+		}, 500);
 	}
 
 	componentWillUnmount() {
@@ -32,7 +42,10 @@ export default  class App extends React.Component {
 	}
 
 	render(){
-		const {params} = this.props;
+		// console.log('new render')
+		const preBoard = this.state.boards || [];
+		const board = preBoard.length ? this.state.boards[0] : null;
+		const boardId = board? this.state.boards[0].id : false
 		return(
 			<div className="app-wrapper">
 				<div className="app-header">
@@ -45,14 +58,13 @@ export default  class App extends React.Component {
 						</Navbar.Header>
 						<Navbar.Collapse>
 							<Nav>
-								<BoardSelectorContainer boardId={params.boardId} />
 								<ClearBoardButtonContainer label={<span><i className="glyphicon glyphicon-minus"></i> Clear Retro</span>} className="btn btn-primary navbar-btn"  />
 							</Nav>
 						</Navbar.Collapse>
 					</Navbar>
 				</div>
 				<div className="app-body">
-					<BoardContainer boardId={params.boardId} />
+					<Board props={this.state} boardId={board? boardId : null} />
 				</div>
 			</div>
 		)

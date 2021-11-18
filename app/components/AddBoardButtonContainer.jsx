@@ -1,44 +1,40 @@
-import { connect } from 'react-redux';
 import Button from './Button';
-import { addBoard, addLaneToBoard } from '../actions/boards';
-import { addLane } from '../actions/lanes';
-import { browserHistory } from 'react-router';
-import uuid from 'uuid';
+import {v4} from 'uuid';
+import React from 'react';
 import socket from '../socketInstance';
 
-const mapStateToButtonProps = (state, ownProps) => ({
-	label: ownProps.label || 'button',
-	className: ownProps.className || 'btn btn-primary'
-});
+const onClick = (props) => {
+	const boardId = v4();
+	let lanes = props.lanes
 
-const mapDispatchToButtonProps = (dispatch, ownProps) => ({
-	onClick: () => {
-		const boardId = uuid.v4();
-		let lanes = ownProps.lanes
-		// lanes = ['Start', 'Stop', 'Continue'];
-
-		dispatch(addBoard(boardId));
-
-		lanes.forEach( (name) => {
-			let laneId = uuid.v4();
-			dispatch(addLane(laneId, name));
-			dispatch(addLaneToBoard(laneId, boardId));
-		});
-
-		//TODO: Is pushing to the browser history the correct thing to do here?
-		browserHistory.push('/board/' + boardId);
-		setTimeout(()=> {
-			const state = localStorage.getItem('state');
-			console.log('state')
-			socket.emit('RETRO_CONFIGURED', state)
-		}, 1001)
-		
+	const state = {
+		boards: [],
+		lanes: [],
+		notes: []
+	};
+	state.boards[0] = {
+		id: boardId,
+		title: boardId,
+		lanes: []
 	}
-});
 
-const AddBoardButtonContainer = connect(
-	mapStateToButtonProps,
-	mapDispatchToButtonProps
-)(Button);
+	
+	lanes.forEach( (name) => {
+		let laneId = v4();
+		state.lanes.push({id: laneId, name: name, notes: []})
+		state.boards[0].lanes.push(laneId)
+	});
+
+
+	localStorage.setItem('state', JSON.stringify(state));
+	socket.emit('BOARD_UPDATE', state)
+	// setTimeout(()=> {
+	// }, 1001)
+	
+}
+
+const AddBoardButtonContainer = (props) => (
+	<Button onClick={() => onClick(props)} label={props.label || 'button'} className={props.className || 'btn btn-primary'} />
+);
 
 export default AddBoardButtonContainer;
