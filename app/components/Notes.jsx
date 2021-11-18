@@ -62,7 +62,7 @@ export default class Notes extends React.Component {
 				if(editing) {
 					return (
 						<li key={id} className={laneClass}>
-							<div className="inputWrapper">
+							<div className="inputWrapper" onBlur={() => onFinishEdit(id, document.getElementById(id).innerText)}>
 								<Note
 									id={id}
 									index={i}

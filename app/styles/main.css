@@ -64,6 +64,7 @@ ul.notes {
     padding-left: 10px;
     height: 70% !important;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .note-wrapper {
