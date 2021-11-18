@@ -20,11 +20,16 @@ a, a:hover, a:visited {
 .app-body {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    height: 90vh;
 }
 
 .container {
     margin-left: 0px !important;
+}
+
+.container-fluid {
+    height: 70%;
+    padding-bottom: 10px;
 }
 
 .intro {
@@ -58,7 +63,6 @@ ul.notes {
     margin-bottom: 0;
     padding-left: 10px;
     height: 70% !important;
-    overflow: scroll;
 }
 
 .note-wrapper {
@@ -107,6 +111,7 @@ button.delete {
 .lane {
     padding-right: 4px !important;
     padding-left: 4px !important;
+    min-width: 250px !important;
   
 }
 
@@ -157,7 +162,9 @@ svg {
     border-radius: 99px !important;
     border: none !important;
     outline: none !important;
-    
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: normal;
 }
 
 .bottom-buttons {
@@ -219,4 +226,27 @@ h2 {
 
 .noteRisks {
     border-color: #FFB300;
+}
+
+.board-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-voting-wrapper {
+    background-color: #9FC5D5;
+    padding: 4px;
+    border-radius: 8px;
+    margin-bottom: 4px;
+}
+
+.top-vote-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
 }
