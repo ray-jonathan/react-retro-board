@@ -296,3 +296,60 @@ h1 {
     font-size: 24px !important;
     line-height: 29px !important;
 }
+
+
+.wrap-up{
+    
+}
+.wrap-up .list-parent{
+    display: flex;
+    justify-content: center;
+    width: 44vw;
+}
+
+.wrap-up .list-parent ul{
+    width: 100%;
+    padding-left: 0;
+}
+
+.wrap-up .list-parent li {
+    list-style-type: none;
+    margin-left: 2vw;
+    margin-bottom: -0.5vw;
+}
+
+.wrap-up .list-parent li > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.wrap-up .list-parent li .first {
+    min-width: 26px;
+    cursor: pointer;
+}
+
+.wrap-up .list-parent li .last {
+    cursor: pointer;
+}
+
+.wrap-up .list-parent li .middle {
+    margin-left: -8vw;
+    color: #244451;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.wrap-up .list-parent li .middle span {
+    color: #589BB6;
+    font-size: 14px;
+}
+
+.timer {
+    position: absolute;
+    left: 9.5vw;
+    bottom: 45px;
+    font-size: 22px;
+    color: rgb(36, 68, 81);
+}

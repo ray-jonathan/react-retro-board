@@ -14,5 +14,14 @@ socket.on('BOARD_UPDATE', (newState) => {
         localStorage.setItem('state', JSON.stringify(newState))
     } 
 })
+socket.on('NEW_PHASE', (phase) => {
+    console.log('heard about a new phase update')
+    delete phase.socketId
+    const oldPhase = JSON.parse(localStorage.getItem('phase'))
+    if(!stringifyIsTheSame(phase, oldPhase)){
+        console.log('updated phase')
+        localStorage.setItem('phase', JSON.stringify(phase))
+    } 
+})
 
 export default socket;

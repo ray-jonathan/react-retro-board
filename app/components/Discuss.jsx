@@ -60,7 +60,9 @@ export default class Discuss extends React.Component {
 				rightButton = <div className='arrow' onClick={this.onNextClick}>{this.Arrow}</div>;
 			}
 			let note = notes[this.state.section-1];
-
+			if(!note){
+				return null;
+			}
 			return (
 				<div className='daddy'>
 					{leftButton}
