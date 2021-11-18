@@ -1,10 +1,10 @@
 import React from 'react';
 import Lane from './Lane';
 
-export default ({lanes = [], voting}) => (
+export default (props) => (
 	<div className="row lanes">
-		{lanes.map((lane) =>
-			<Lane lane={lane} key={lane.id} voting={voting}/>
+		{props.lanes.map((lane) =>
+			<Lane lane={lane} key={lane.id} voting={props.voting} {...props} />
 		)}
 	</div>
 );

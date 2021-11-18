@@ -64,7 +64,7 @@ export default  class App extends React.Component {
 					</Navbar>
 				</div>
 				<div className="app-body">
-					<Board props={this.state} boardId={board? boardId : null} />
+					<Board state={this.state} boardId={board? boardId : null} />
 				</div>
 			</div>
 		)

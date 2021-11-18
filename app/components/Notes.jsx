@@ -4,7 +4,7 @@ import Button from './Button';
 import EditableInline from './EditableInline';
 
 
-export default class Board extends React.Component {
+export default class Notes extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {voted: { 15214: false, 2215: true }};

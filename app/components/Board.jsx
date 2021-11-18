@@ -99,7 +99,7 @@ export default class Board extends React.Component {
 						<div className='board-page'>
 							{this.ThinkHeader}
 							<div className="board container-fluid">
-								<Lanes {...this.props}/>
+								<Lanes {...this.props.state} state={this.props.state}/>
 							</div>
 							<button className='bigSvg' onClick={this.onIntroNextClick}>
 								{this.Footer}
@@ -111,7 +111,7 @@ export default class Board extends React.Component {
 					<div className='board-page'>
 						{this.VoteHeader}
 						<div className="board container-fluid">
-							<Lanes {...this.props} voting={true}/>
+							<Lanes {...this.props.state} state={this.props.state} voting={true}/>
 						</div>
 						<button className='bigSvg' onClick={() => this.onVotingNextClick}>
 							{this.Footer}
